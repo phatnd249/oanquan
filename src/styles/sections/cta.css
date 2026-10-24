@@ -1,0 +1,20 @@
+/* CTA Banner Section Styles */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  border-radius: var(--radius-lg);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-banner h2 {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-banner p {
+  color: rgba(251, 249, 245, 0.8);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}

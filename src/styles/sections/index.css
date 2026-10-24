@@ -1,0 +1,9 @@
+/* Tổng hợp toàn bộ style của các sections */
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./about.css');
+@import url('./features.css');
+@import url('./stats.css');
+@import url('./showcase.css');
+@import url('./cta.css');
+@import url('./footer.css');
