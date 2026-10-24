@@ -1,0 +1,161 @@
+/* 09. QUÀ TẶNG GACHA + MUA HÀNG */
+.gacha__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.gacha__box-wrapper {
+  background: #FFFFFF;
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 3.5vw, 3rem);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(250, 162, 29, 0.12);
+  position: relative;
+}
+
+.gacha__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: #FFFFFF;
+  padding: 0.35rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(250, 162, 29, 0.35);
+}
+
+.gacha__chest-img {
+  max-height: 180px;
+  margin: 1.5rem auto 1rem;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gacha__chest-img:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.gacha__prizes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.gacha-prize-pill {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  border: 1px solid rgba(34, 167, 164, 0.2);
+}
+
+/* Order Form Box */
+.order-box {
+  background: #FFFFFF;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 3.5vw, 3rem);
+  box-shadow: var(--shadow-md);
+}
+
+.order-box__header {
+  border-bottom: 1.5px solid var(--color-border);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-box__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.order-box__current-price {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-accent-hover);
+}
+
+.order-box__original-price {
+  font-size: var(--text-base);
+  color: #9AA7A4;
+  text-decoration: line-through;
+}
+
+.order-box__discount {
+  background: rgba(250, 162, 29, 0.15);
+  color: var(--color-accent-hover);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.order-input-group label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+}
+
+.order-input {
+  padding: 0.85rem 1.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  outline: none;
+  background: var(--color-bg);
+}
+
+.order-input:focus {
+  border-color: var(--color-accent);
+  background: #FFFFFF;
+}
+
+.order-commitments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.order-commitments span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 860px) {
+  .gacha__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,20 +1,67 @@
-/* CTA Banner Section Styles */
-.cta-banner {
+/* 13. CTA CUỐI + ĐĂNG KÝ NHẬN TIN */
+.cta-final {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  border-radius: var(--radius-lg);
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: var(--radius-xl);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
+  color: #FFFFFF;
   text-align: center;
-  color: var(--color-text-light);
+  position: relative;
+  overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
 
-.cta-banner h2 {
-  color: var(--color-text-light);
-  margin-bottom: var(--space-sm);
+.cta-final__circle-bg {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(250, 162, 29, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.cta-banner p {
-  color: rgba(251, 249, 245, 0.8);
-  max-width: 600px;
-  margin: 0 auto var(--space-xl);
+.cta-final h2 {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.cta-final p {
+  color: rgba(252, 243, 234, 0.9);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  font-size: var(--text-base);
+}
+
+.cta-final__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.cta-final__form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cta-final__form-row .input-text {
+  flex: 1;
+}
+
+.cta-final__direct-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--text-sm);
+  color: rgba(252, 243, 234, 0.8);
+}
+
+@media (max-width: 640px) {
+  .cta-final__form-row {
+    flex-direction: column;
+  }
 }

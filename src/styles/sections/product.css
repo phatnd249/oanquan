@@ -1,0 +1,126 @@
+/* 05. SẢN PHẨM - BỘ Ô ĂN QUAN */
+.product-features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 992px) {
+  .product-features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .product-features__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product__layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.product__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product__main-img {
+  background: #FFFFFF;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+}
+
+.product__main-img img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-slow);
+}
+
+.product__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.product__thumb {
+  background: #FFFFFF;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 0.35rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.product__thumb:hover,
+.product__thumb.active {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.product__thumb img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.product__specs-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  background: #FFFFFF;
+  margin: 1.5rem 0 2rem;
+}
+
+.product__specs-table th,
+.product__specs-table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product__specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.product__specs-table th {
+  background: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.product__highlight-box {
+  background: rgba(250, 162, 29, 0.12);
+  border-left: 4px solid var(--color-accent);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 992px) {
+  .product__layout {
+    grid-template-columns: 1fr;
+  }
+}

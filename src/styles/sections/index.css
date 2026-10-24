@@ -1,9 +1,11 @@
-/* Tổng hợp toàn bộ style của các sections */
+/* Tổng hợp toàn bộ style của các sections tập trung vào sản phẩm Ô Ăn Quan */
 @import url('./header.css');
 @import url('./hero.css');
+@import url('./product.css');
+@import url('./rules.css');
+@import url('./characters.css');
+@import url('./gacha.css');
 @import url('./about.css');
-@import url('./features.css');
-@import url('./stats.css');
-@import url('./showcase.css');
-@import url('./cta.css');
+@import url('./usp.css');
+@import url('./faq.css');
 @import url('./footer.css');

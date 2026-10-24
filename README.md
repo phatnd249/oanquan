@@ -1,73 +1,91 @@
-# CỘI - Landing Page Dự Án Di Sản & Bản Sắc Việt
+# CỘI - Landing Page (Vite & GitHub Pages)
 
-Cấu trúc dự án Landing Page tinh gọn, chuẩn SEO, tối ưu tốc độ và sẵn sàng triển khai trực tiếp lên **GitHub Pages** không cần build step phức tạp.
+Landing Page tôn vinh bản sắc và di sản truyền thống Việt Nam. Dự án được xây dựng với **Vite**, chia nhỏ các module HTML Partials, Vanilla CSS Tokens và đã cấu hình sẵn sàng tự động build & deploy lên **GitHub Pages**.
 
 ---
 
-## 📁 Cấu Trúc Thư Mục (Project Structure)
+## 📁 Cấu Trúc Thư Mục Chuẩn
 
 ```text
-coi/
+/
+├── index.html                       # Entry HTML chính, nhúng các partials và main.js
+├── vite.config.js                   # Cấu hình Vite (base relative & HTML Partials plugin)
+├── package.json                     # Scripts & devDependencies
+├── .env.example                     # Biến môi trường mẫu (VITE_SITE_URL, ...)
+├── .gitignore                       # Bỏ qua node_modules, dist, .env...
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml          # GitHub Actions tự động deploy lên GitHub Pages khi push
-├── assets/
-│   ├── css/
-│   │   ├── variables.css       # Design Tokens (màu sắc, font chữ, spacing, radius, shadow)
-│   │   ├── base.css            # Reset CSS, typography và utility classes
-│   │   ├── components.css      # Header/Nav, Buttons, Cards, Badges, Form Inputs
-│   │   ├── sections.css        # Bố cục từng section (Hero, About, Features, Stats, Footer)
-│   │   └── style.css           # Master stylesheet tổng hợp
-│   ├── js/
-│   │   ├── main.js             # Logic menu mobile, sticky navbar, smooth scroll, form
-│   │   └── animations.js       # Hiệu ứng scroll reveal & số nhảy tự động (stats counter)
-│   ├── images/
-│   │   ├── branding/           # Logo, biểu trưng thương hiệu (logo.png, logo-badge.png)
-│   │   ├── hero/               # Banner và ảnh minh họa chính
-│   │   ├── icons/              # Biểu tượng SVG / Icons
-│   │   └── favicon.svg         # Favicon trình duyệt
-│   └── fonts/                  # (Tùy chọn) Thư mục chứa web font nếu không dùng Google Fonts
-├── index.html                  # File HTML chính chuẩn Semantic & SEO
-├── 404.html                    # Trang báo lỗi 404 tùy chỉnh chuẩn GitHub Pages
-├── .nojekyll                   # Vô hiệu hóa Jekyll để GitHub Pages load tài nguyên tĩnh nhanh nhất
-└── README.md                   # Tài liệu hướng dẫn dự án
+│       └── deploy.yml               # Tự động build Vite & deploy lên GitHub Pages
+├── public/
+│   ├── robots.txt                   # Quy tắc thu thập dữ liệu tìm kiếm
+│   ├── sitemap.xml                  # Bản đồ website chuẩn SEO
+│   ├── 404.html                     # Trang 404 tùy biến
+│   ├── CNAME                        # Tên miền tùy chỉnh (nếu có)
+│   ├── favicon.svg                  # Favicon trình duyệt
+│   ├── og-image.svg                 # Ảnh Open Graph chuẩn 1200x630
+│   └── .nojekyll                    # Tắt Jekyll trên GitHub Pages
+├── src/
+│   ├── partials/                    # Các khối giao diện HTML tách nhỏ
+│   │   ├── header.html              # Thanh điều hướng và menu
+│   │   ├── hero.html                # Banner mở đầu và CTA
+│   │   ├── about.html               # Câu chuyện thương hiệu Cội
+│   │   ├── features.html            # Điểm nổi bật & giá trị cốt lõi
+│   │   ├── stats.html               # Thống kê & chỉ số ấn tượng
+│   │   ├── showcase.html            # Bộ sưu tập hình ảnh
+│   │   ├── cta.html                 # Khối kêu gọi hành động & form
+│   │   └── footer.html              # Chân trang & liên kết
+│   ├── styles/
+│   │   ├── tokens.css               # Biến màu, font, spacing, border, breakpoint
+│   │   ├── base.css                 # Reset CSS, typography & animation
+│   │   ├── components.css           # Buttons, Cards, Badges, Inputs
+│   │   └── sections/                # Style riêng biệt cho từng section
+│   │       ├── header.css
+│   │       ├── hero.css
+│   │       ├── about.css
+│   │       ├── features.css
+│   │       ├── stats.css
+│   │       ├── showcase.css
+│   │       ├── cta.css
+│   │       ├── footer.css
+│   │       └── index.css
+│   ├── scripts/
+│   │   ├── main.js                  # Entry script chính của Vite
+│   │   ├── menu.js                  # Xử lý mobile menu, sticky nav, scrollspy
+│   │   ├── posts.js                 # Dữ liệu bài viết, câu chuyện, chỉ số
+│   │   ├── images.js                # Khai báo & export đường dẫn ảnh tập trung
+│   │   └── config.js                # Cấu hình website & đọc biến môi trường
+│   └── assets/
+│       ├── images/                  # Thư mục hình ảnh & logo thương hiệu
+│       └── icons/                   # Thư mục chứa biểu tượng SVG
+└── docs/
+    ├── PROJECT_NOTES.md             # Ghi chú kỹ thuật & hướng dẫn lập trình
+    └── ASSETS_TODO.md               # Danh mục checklist tài nguyên cần bổ sung
 ```
 
 ---
 
-## 🚀 Hướng Dẫn Deploy Lên GitHub Pages
+## ⚡ Các Lệnh Phát Triển
 
-Dự án đã được cấu hình sẵn đường dẫn tương đối (`./assets/...`), hỗ trợ 2 cách deploy:
+```bash
+# 1. Cài đặt thư viện (đã cài đặt sẵn)
+npm install
 
-### Cách 1: Deploy trực tiếp từ nhánh `main` (Đơn giản nhất - Khuyên dùng)
-1. Đẩy mã nguồn lên repository GitHub của bạn:
-   ```bash
-   git init
-   git add .
-   git commit -m "Khởi tạo landing page CỘI"
-   git branch -M main
-   git remote add origin https://github.com/<tai-khoan>/<ten-repo>.git
-   git push -u origin main
-   ```
-2. Vào GitHub Repository -> **Settings** -> mục **Pages** (cột trái).
-3. Tại phần **Build and deployment**:
-   - **Source**: Chọn `Deploy from a branch`.
-   - **Branch**: Chọn `main` và thư mục `/ (root)`.
-   - Bấm **Save**.
-4. Chờ 1 - 2 phút, website của bạn sẽ hoạt động tại địa chỉ:
-   `https://<tai-khoan>.github.io/<ten-repo>/`
+# 2. Khởi chạy dev server (HMR tức thì tại http://localhost:3000)
+npm run dev
 
-### Cách 2: Deploy qua GitHub Actions (Đã có sẵn file `.github/workflows/deploy.yml`)
-1. Vào **Settings** -> **Pages**.
-2. Tại phần **Build and deployment** -> **Source**: Chọn **GitHub Actions**.
-3. Mỗi khi bạn `git push` lên `main`, hệ thống sẽ tự động kích hoạt workflow và cập nhật trang web tức thì.
+# 3. Build sản phẩm tối ưu ra thư mục dist/
+npm run build
+
+# 4. Xem thử bản build production
+npm run preview
+```
 
 ---
 
-## 🎨 Hướng Dẫn Khi Có Bản Thiết Kế
+## 🚀 Triển Khai Lên GitHub Pages
 
-Khi bạn có bản thiết kế chính thức (Figma/Photoshop):
-1. **Màu sắc & Font chữ**: Điều chỉnh mã màu tại file `assets/css/variables.css`.
-2. **Hình ảnh & Banner**: Thêm hình ảnh mới vào thư mục `assets/images/`.
-3. **Nội dung & Section**: Chỉnh sửa hoặc bổ sung các khối thẻ trong file `index.html`.
-4. **Hiệu ứng tùy biến**: Thêm animation trong `assets/js/animations.js`.
+File `.github/workflows/deploy.yml` đã được cấu hình tự động:
+1. Đẩy mã nguồn lên repository GitHub của bạn (`git push origin main`).
+2. Trên GitHub, vào **Settings** -> **Pages**.
+3. Tại mục **Build and deployment** > **Source**: Chọn **GitHub Actions**.
+4. GitHub Actions sẽ tự động chạy `npm install`, `npm run build` và deploy thư mục `dist/` lên website GitHub Pages của bạn mà không cần bất kỳ thao tác thủ công nào.

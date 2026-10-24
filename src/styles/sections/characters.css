@@ -1,0 +1,122 @@
+/* 04. NHÂN VẬT - CHÍP & TRÚC MAI */
+.characters__intro {
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+.characters__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.char-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.char-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.char-card--truc-mai:hover {
+  border-color: var(--color-primary);
+}
+
+.char-card--chip:hover {
+  border-color: var(--color-accent);
+}
+
+.char-card__visual {
+  height: 320px;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.char-card--truc-mai .char-card__visual {
+  background: radial-gradient(circle, rgba(34, 167, 164, 0.2) 0%, #FCF3EA 80%);
+}
+
+.char-card--chip .char-card__visual {
+  background: radial-gradient(circle, rgba(250, 162, 29, 0.25) 0%, #FCF3EA 80%);
+}
+
+.char-card__visual img {
+  max-height: 280px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.char-card:hover .char-card__visual img {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.char-card__body {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.char-card__name {
+  font-size: var(--text-2xl);
+  margin-bottom: 0.25rem;
+  color: var(--color-primary-dark);
+}
+
+.char-card__role {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-hover);
+}
+
+.char-card__quote {
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  border-left: 3px solid var(--color-primary-soft);
+  padding-left: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.char-card__traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.char-trait {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: rgba(34, 167, 164, 0.1);
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 860px) {
+  .characters__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,101 @@
+/* 03. VẤN ĐỀ -> GIẢI PHÁP (INSIGHT) */
+.insight__quote {
+  max-width: 860px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.insight__quote blockquote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-primary-dark);
+}
+
+.insight__quote blockquote span {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.insight__comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.comparison-card {
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 3.5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.comparison-card--before {
+  background: #FFFFFF;
+  border: 1.5px dashed #D2DDD8;
+}
+
+.comparison-card--before .comparison-card__header {
+  color: #7A8985;
+}
+
+.comparison-card--after {
+  background: rgba(34, 167, 164, 0.08);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 12px 30px rgba(34, 167, 164, 0.12);
+}
+
+.comparison-card--after .comparison-card__header {
+  color: var(--color-primary);
+}
+
+.comparison-card__header {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.comparison-item__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.comparison-item p {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-main);
+}
+
+@media (max-width: 768px) {
+  .insight__comparison {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,29 +1,39 @@
 <header class="header" id="header">
   <div class="container header__nav">
+    <!-- Logo CỘI nền trong suốt (Horizontal Lockup) -->
     <a href="#hero" class="header__logo" aria-label="Trang chủ CỘI">
-      <img class="dynamic-logo" src="./assets/images/branding/logo.png" alt="Logo CỘI" id="brand-logo" onerror="this.style.display='none'">
-      <span>CỘI</span>
+      <img data-asset="logoNav" src="./src/assets/images/branding/logo-nav.png" alt="Logo CỘI" class="header__logo-img">
     </a>
 
-    <!-- Desktop Navigation Menu -->
-    <nav class="nav__menu" id="nav-menu" aria-label="Main Navigation">
+    <!-- Desktop Navigation Links (Căn giữa) -->
+    <nav class="nav__menu" id="nav-menu" aria-label="Thanh điều hướng chính">
       <ul class="nav__links">
-        <li><a href="#hero" class="nav__link active" id="nav-home">Trang Chủ</a></li>
-        <li><a href="#about" class="nav__link" id="nav-about">Câu Chuyện Cội</a></li>
-        <li><a href="#features" class="nav__link" id="nav-features">Điểm Khác Biệt</a></li>
-        <li><a href="#showcase" class="nav__link" id="nav-showcase">Bộ Sưu Tập</a></li>
-        <li><a href="#contact" class="nav__link" id="nav-contact">Liên Hệ</a></li>
+        <li><a href="#product" class="nav__link">Khám Phá Bộ Cờ</a></li>
+        <li><a href="#rules" class="nav__link">Cách Chơi</a></li>
+        <li><a href="#characters" class="nav__link">Nhân Vật</a></li>
+        <li><a href="#gacha" class="nav__link">Quà Gacha</a></li>
+        <li><a href="#about" class="nav__link">Về CỘI</a></li>
+        <li><a href="#faq" class="nav__link">FAQ</a></li>
       </ul>
-      <div class="nav__cta">
-        <a href="#contact" class="btn btn--accent" id="cta-header">Trải Nghiệm Ngay</a>
+      <!-- Nút trong mobile drawer -->
+      <div class="nav__drawer-cta">
+        <a href="#gacha" class="btn btn--accent" style="width: 100%;">Đặt Mua Ngay — 389.000 đ</a>
       </div>
     </nav>
 
-    <!-- Hamburger Menu Mobile Button -->
-    <button class="nav__toggle" id="nav-toggle" aria-label="Mở thực đơn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- Header Actions (Bên phải): Nút Đặt Mua & Hamburger -->
+    <div class="header__action">
+      <a href="#gacha" class="btn btn--accent header__buy-btn" id="nav-cta-buy">
+        <span>Đặt Mua Ngay</span>
+        <span class="header__price-tag">389K</span>
+      </a>
+
+      <!-- Hamburger Menu Mobile Button -->
+      <button class="nav__toggle" id="nav-toggle" aria-label="Mở thực đơn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>

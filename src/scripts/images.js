@@ -1,32 +1,36 @@
 /**
- * Khai báo và quản lý đường dẫn hình ảnh / icons tập trung
- * Hỗ trợ Vite import hoặc public assets
+ * Khai báo và quản lý tài nguyên hình ảnh thực tế của Boardgame CỘI
  */
 
 import logoSrc from '../assets/images/branding/logo.png';
+import logoNavSrc from '../assets/images/branding/logo-nav.png';
 import logoBadgeSrc from '../assets/images/branding/logo-badge.png';
 
+import trucMaiSrc from '../assets/images/characters/truc-mai.png';
+import chipSrc from '../assets/images/characters/chip.png';
+
+import boxSrc from '../assets/images/product/box.png';
+import boardSrc from '../assets/images/product/board.png';
+import piecesSrc from '../assets/images/product/pieces.png';
+import mockupSrc from '../assets/images/product/mockup.png';
+
+import giftsSrc from '../assets/images/gacha/gifts.jpg';
+import posterSrc from '../assets/images/gallery/poster.png';
+import standeeSrc from '../assets/images/gallery/standee.png';
+import toteSrc from '../assets/images/gallery/tote.png';
+
 export const images = {
-  branding: {
-    logo: logoSrc,
-    badge: logoBadgeSrc,
-    favicon: './favicon.svg'
-  },
-  showcase: {
-    pottery: {
-      title: 'Bộ Sưu Tập Gốm Mộc',
-      desc: 'Hơi thở đất nung từ phù sa sông Hồng',
-      tag: 'Gốm Thủ Công'
-    },
-    weaving: {
-      title: 'Sợi Tự Nhiên & Chàm',
-      desc: 'Màu nhuộm thảo mộc vùng cao Tây Bắc',
-      tag: 'Dệt Bản Địa'
-    },
-    tea: {
-      title: 'Trà & Thảo Mộc Bản Địa',
-      desc: 'Thanh mát, nguyên bản vị tự nhiên',
-      tag: 'Ẩm Thực Tự Nhiên'
-    }
-  }
+  logo: logoSrc,
+  logoNav: logoNavSrc,
+  logoBadge: logoBadgeSrc,
+  trucMai: trucMaiSrc,
+  chip: chipSrc,
+  box: boxSrc,
+  board: boardSrc,
+  pieces: piecesSrc,
+  mockup: mockupSrc,
+  gifts: giftsSrc,
+  poster: posterSrc,
+  standee: standeeSrc,
+  tote: toteSrc
 };

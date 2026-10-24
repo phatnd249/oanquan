@@ -1,25 +1,30 @@
 /**
- * Cấu hình tổng thể của dự án CỘI Landing Page
+ * Cấu hình tổng thể dự án Boardgame CỘI (Ô Ăn Quan)
  */
 
 export const siteConfig = {
   name: 'CỘI',
-  tagline: 'Tinh Hoa Bản Sắc & Di Sản Thuần Việt',
-  description: 'Khám phá hành trình gìn giữ và tôn vinh những giá trị truyền thống Việt qua từng sản phẩm mộc mạc, tinh tế và bền vững.',
+  productName: 'Boardgame Ô Ăn Quan',
+  tagline: 'Gìn giữ nét xưa – Kết nối thế hệ.',
+  keyMessage: 'Cùng cội khám phá lại: Miền tuổi thơ Việt',
+  description: 'Boardgame Ô Ăn Quan phiên bản mới của CỘI: bàn cờ 2 mặt gấp gọn, quân acrylic, nhân vật Chíp & Trúc Mai. Dễ chơi từ 7 tuổi, quà gacha khi mua online.',
   url: import.meta.env.VITE_SITE_URL || 'https://username.github.io/coi',
   email: import.meta.env.VITE_CONTACT_EMAIL || 'lienhe@coi.vn',
   hotline: import.meta.env.VITE_HOTLINE || '+84 (0) 90 000 0000',
-  address: 'Hà Nội & TP. Hồ Chí Minh, Việt Nam',
+  credits: {
+    project: 'Đồ án tốt nghiệp ngành Truyền thông Đa phương tiện – Trường Đại học Lạc Hồng',
+    authors: 'Trần Xuân Nghi, Nguyễn Ngọc Xuân Nhi',
+    instructor: 'ThS. Phan Thị Hường',
+    year: '2026'
+  },
   navLinks: [
-    { label: 'Trang Chủ', href: '#hero' },
-    { label: 'Câu Chuyện Cội', href: '#about' },
-    { label: 'Điểm Khác Biệt', href: '#features' },
-    { label: 'Bộ Sưu Tập', href: '#showcase' },
-    { label: 'Liên Hệ', href: '#contact' },
-  ],
-  socials: {
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
-    tiktok: 'https://tiktok.com'
-  }
+    { label: 'Về CỘI', href: '#about' },
+    { label: 'Nhân Vật', href: '#characters' },
+    { label: 'Sản Phẩm', href: '#product' },
+    { label: 'Cách Chơi', href: '#rules' },
+    { label: 'Điểm Nổi Bật', href: '#usp' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'Quà Gacha', href: '#gacha' },
+    { label: 'FAQ', href: '#faq' },
+  ]
 };

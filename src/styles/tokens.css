@@ -1,35 +1,45 @@
 /* ==========================================================================
-   DESIGN TOKENS & SYSTEM VARIABLES
+   DESIGN TOKENS - BOARDGAME CỘI (Ô ĂN QUAN)
+   Chuẩn theo Brand Guidelines & Presentation Slide
    ========================================================================== */
 
 :root {
-  /* Colors - Sang trọng, tự nhiên, bản sắc di sản */
-  --color-primary: #1E3A2F;        /* Xanh rêu trầm */
-  --color-primary-light: #2D5545;
-  --color-primary-dark: #12241D;
-  --color-accent: #C5A059;         /* Vàng đồng hoàng kim */
-  --color-accent-hover: #D4AF67;
-  --color-accent-soft: rgba(197, 160, 89, 0.15);
+  /* Brand Core Colors */
+  --color-primary: #22A7A4;         /* Teal - Màu thương hiệu chính */
+  --color-primary-dark: #254A45;    /* Xanh rêu đậm - Đảm bảo contrast WCAG AA, dùng cho footer & text */
+  --color-primary-deep: #1C8A87;    /* Teal đậm hơn cho nút hover & text contrast */
+  --color-primary-light: #0DB1B0;   /* Teal tươi sáng */
+  --color-primary-soft: #87CFCE;    /* Teal nhạt / pastel */
+  --color-primary-tint: rgba(34, 167, 164, 0.12);
 
-  --color-bg: #FBF9F5;             /* Warm White */
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F3EFEA;
-  --color-dark: #151816;
+  --color-accent: #FAA21D;          /* Cam - CTA nổi bật, badge, điểm nhấn */
+  --color-accent-hover: #E38E32;    /* Cam đậm khi hover */
+  --color-accent-soft: rgba(250, 162, 29, 0.15);
+
+  --color-bg: #FCF3EA;              /* Kem ấm áp - Nền trang chủ đạo */
+  --color-surface: #FFFFFF;         /* Nền card trắng */
+  --color-surface-soft: #FAFCFC;    /* Nền trắng xanh dịu */
+  --color-surface-cream: #EADCA8;   /* Màu be gỗ / đồng quê */
+  --color-olive: #8C9B78;           /* Xanh olive */
+  --color-mid-teal: #48ABA5;
 
   /* Typography Colors */
-  --color-text-main: #1D231F;
-  --color-text-muted: #647067;
-  --color-text-light: #FBF9F5;
+  --color-text-main: #141414;       /* Chữ chính tối */
+  --color-text-muted: #526360;      /* Chữ phụ / mô tả */
+  --color-text-light: #FCF3EA;      /* Chữ sáng trên nền teal / dark */
+  --color-text-white: #FFFFFF;
 
-  /* Borders */
-  --color-border: rgba(30, 58, 47, 0.08);
+  /* Borders & Dividers */
+  --color-border: rgba(37, 74, 69, 0.12);
+  --color-border-card: rgba(34, 167, 164, 0.18);
   --color-border-focus: var(--color-accent);
 
-  /* Fonts */
-  --font-primary: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  /* Typography */
+  --font-heading: 'Phudu', cursive, sans-serif; /* DT Phudu chính hãng */
+  --font-body: 'Be Vietnam Pro', Helvetica, Arial, sans-serif;
+  --font-product: 'Phudu', sans-serif;
 
-  /* Fluid Font Sizes */
+  /* Fluid Typography */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
   --text-sm: clamp(0.875rem, 0.82rem + 0.28vw, 0.9375rem);
   --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
@@ -53,35 +63,32 @@
 
   /* Layout */
   --container-max-width: 1200px;
-  --container-padding: clamp(1rem, 5vw, 2rem);
+  --container-padding: clamp(1rem, 4vw, 2rem);
   --header-height: 80px;
 
-  /* Borders & Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  /* Border Radius - Tròn trịa, cảm giác quân cờ */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(21, 24, 22, 0.04);
-  --shadow-md: 0 8px 24px rgba(21, 24, 22, 0.08);
-  --shadow-lg: 0 16px 40px rgba(21, 24, 22, 0.12);
-  --shadow-glow: 0 0 30px rgba(197, 160, 89, 0.25);
+  --shadow-sm: 0 4px 12px rgba(20, 20, 20, 0.04);
+  --shadow-md: 0 8px 24px rgba(34, 167, 164, 0.08);
+  --shadow-lg: 0 16px 36px rgba(37, 74, 69, 0.12);
+  --shadow-accent: 0 8px 25px rgba(250, 162, 29, 0.35);
+  --shadow-teal: 0 8px 25px rgba(34, 167, 164, 0.3);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Breakpoint Tokens (for reference / JS) */
-  --bp-sm: 576px;
-  --bp-md: 768px;
-  --bp-lg: 992px;
-  --bp-xl: 1200px;
-
   /* Z-index */
   --z-back: -1;
   --z-normal: 1;
   --z-nav: 100;
   --z-modal: 1000;
+  --z-toast: 2000;
 }

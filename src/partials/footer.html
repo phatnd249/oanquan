@@ -1,47 +1,76 @@
+<!-- Băng hoa văn phân cách đỉnh footer -->
+<div class="flower-divider flower-divider--white" aria-hidden="true"></div>
+
 <footer class="footer" id="footer">
-  <div class="container">
+  <div class="container" style="padding-top: 3.5rem;">
     <div class="footer__grid">
+      <!-- Cột Thương hiệu -->
       <div class="footer__brand">
-        <div class="header__logo" style="color: var(--color-text-light);">
-          <img class="dynamic-logo" src="./assets/images/branding/logo.png" alt="Logo CỘI" style="height: 38px;" onerror="this.style.display='none'">
+        <a href="#hero" class="header__logo" style="color: #FFFFFF;">
+          <img data-asset="logo" src="./src/assets/images/branding/logo.png" alt="Logo CỘI">
           <span>CỘI</span>
-        </div>
-        <p>Thương hiệu tôn vinh bản sắc và di sản truyền thống Việt Nam qua ngôn ngữ thiết kế mộc mạc và đương đại.</p>
+        </a>
+        <p class="footer__tagline">
+          "Gìn giữ nét xưa – Kết nối thế hệ."
+        </p>
+        <p>
+          Boardgame Ô Ăn Quan phiên bản mới — mang niềm vui trò chơi dân gian trở lại với phong cách sống hiện đại.
+        </p>
       </div>
 
+      <!-- Cột Trò chơi -->
       <div class="footer__col">
-        <h4 class="footer__title">Điều Hướng</h4>
+        <h4 class="footer__title">Khám Phá</h4>
         <ul class="footer__links">
-          <li><a href="#hero">Trang Chủ</a></li>
-          <li><a href="#about">Về Cội</a></li>
-          <li><a href="#features">Giá Trị Cốt Lõi</a></li>
-          <li><a href="#showcase">Bộ Sưu Tập</a></li>
+          <li><a href="#product">Mở Hộp Bộ Cờ</a></li>
+          <li><a href="#rules">Luật Chơi 3 Phút</a></li>
+          <li><a href="#characters">Chíp & Trúc Mai</a></li>
+          <li><a href="#gacha">Hộp Quà Gacha</a></li>
         </ul>
       </div>
 
+      <!-- Cột Thông tin -->
       <div class="footer__col">
-        <h4 class="footer__title">Dịch Vụ</h4>
+        <h4 class="footer__title">Thông Tin</h4>
         <ul class="footer__links">
-          <li><a href="#">Bộ Quà Tặng Doanh Nghiệp</a></li>
-          <li><a href="#">Đặt Hàng Thủ Công</a></li>
-          <li><a href="#">Hợp Tác Làng Nghề</a></li>
-          <li><a href="#">Chính Sách Giao Nhận</a></li>
+          <li><a href="#about">Về CỘI</a></li>
+          <li><a href="#faq">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="#gacha">Chính Sách Giao Nhận</a></li>
         </ul>
       </div>
 
+      <!-- Cột Liên hệ -->
       <div class="footer__col">
         <h4 class="footer__title">Liên Hệ</h4>
         <ul class="footer__links">
           <li><a href="mailto:lienhe@coi.vn">lienhe@coi.vn</a></li>
           <li><a href="tel:0900000000">+84 (0) 90 000 0000</a></li>
-          <li><span>Hà Nội & TP. Hồ Chí Minh, Việt Nam</span></li>
+          <li><span>Giao hàng toàn quốc</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Dòng Ghi Công & Copyright -->
     <div class="footer__bottom">
-      <p>&copy; 2026 CỘI. Tất cả các quyền được bảo lưu.</p>
-      <p>Landing Page xây dựng trên Vite & GitHub Pages</p>
+      <p class="footer__credits">
+        🎓 Đồ án tốt nghiệp ngành Truyền thông Đa phương tiện – Trường Đại học Lạc Hồng (2026)
+      </p>
+      <p>&copy; 2026 CỘI Boardgame. Tất cả các quyền được bảo lưu.</p>
     </div>
   </div>
 </footer>
+
+<!-- Thanh CTA cố định đáy màn hình trên Mobile -->
+<div class="mobile-sticky-cta" id="mobile-sticky-bar">
+  <div>
+    <div style="font-family: var(--font-heading); font-size: var(--text-sm); font-weight: 800; color: var(--color-primary-dark);">
+      Ô Ăn Quan CỘI
+    </div>
+    <div style="font-size: var(--text-xs); color: var(--color-accent-hover); font-weight: 700;">
+      389.000 đ · Tặng Gacha 🎁
+    </div>
+  </div>
+  <a href="#gacha" class="btn btn--accent" id="mobile-cta-btn">
+    Đặt Mua Ngay
+  </a>
+</div>
