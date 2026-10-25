@@ -18,9 +18,30 @@
   margin-bottom: 3.5rem;
 }
 
+.footer__logo {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: opacity var(--transition-fast);
+}
+
+.footer__logo:hover {
+  opacity: 0.9;
+}
+
+.footer__logo-img,
+.footer__brand img {
+  height: 44px;
+  max-height: 44px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
 .footer__brand p {
   color: rgba(252, 243, 234, 0.75);
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   max-width: 320px;
   font-size: var(--text-sm);
   line-height: 1.6;
