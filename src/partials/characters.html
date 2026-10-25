@@ -2,63 +2,115 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-subtitle">Bạn Đồng Hành Tuổi Thơ</span>
-      <h2 class="section-title">Gặp gỡ Chíp & Trúc Mai</h2>
+      <h2 class="section-title">Gặp Gỡ Trúc Mai & Bé Chíp</h2>
       <p class="characters__intro">
-        Hai nhân vật đáng yêu được khắc họa trực tiếp trên từng quân cờ Quan, đưa bạn bước vào chuyến du hành trở về với những miền ký ức tuổi thơ trong trẻo!
+        Hai nhân vật chính mang linh hồn của Boardgame CỘI — dẫn dắt bạn bước vào chuyến du hành thời gian tìm lại miền ký ức tuổi thơ, đồng thời được khắc họa trực tiếp trên từng quân cờ Quan Acrylic cao cấp!
       </p>
     </div>
 
     <!-- 2 Character Cards Grid -->
     <div class="characters__grid">
       <!-- Nhân vật 1: Trúc Mai -->
-      <div class="char-card char-card--truc-mai reveal delay-1">
+      <article class="char-card char-card--truc-mai reveal delay-1">
         <div class="char-card__visual">
-          <img data-asset="trucMai" src="./src/assets/images/characters/truc-mai.png" alt="Nhân vật Trúc Mai">
+          <img data-asset="trucMai" src="./src/assets/images/characters/truc-mai.png" alt="Nhân vật Trúc Mai - Boardgame CỘI" loading="lazy">
+          <span class="char-card__piece-tag char-card__piece-tag--teal">
+            Quân Quan Ngọc Bích
+          </span>
         </div>
         <div class="char-card__body">
-          <div>
-            <span class="char-card__role">Cô bé hiếu kỳ · 15 tuổi</span>
+          <div class="char-card__header">
+            <span class="char-card__role">Nhân vật chính · 15 tuổi</span>
             <h3 class="char-card__name">Trúc Mai</h3>
           </div>
-          <p class="char-card__quote">
-            "Hãy cùng mình và Chíp khám phá thế giới trò chơi kỳ diệu của ông bà nhé!"
-          </p>
-          <p style="font-size: var(--text-sm); line-height: 1.6;">
-            Cô bé hiện đại, hoạt bát và đầy can đảm. Đại diện cho thế hệ trẻ tò mò khám phá những giá trị văn hóa truyền thống và lan tỏa niềm vui đến mọi người.
-          </p>
+
+          <blockquote class="char-card__quote">
+            “Hãy cùng mình và Chíp khám phá thế giới trò chơi kỳ diệu của ông bà nhé!”
+          </blockquote>
+
+          <div class="char-info-list">
+            <div class="char-info-row">
+              <span class="char-info-label">Vai trò:</span>
+              <span class="char-info-desc">Nhân vật chính — người đồng hành cùng Chíp trong hành trình tìm lại các trò chơi dân gian Việt Nam.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Tính cách:</span>
+              <span class="char-info-desc">Vui vẻ, năng động, thân thiện, tò mò và can đảm. Luôn hào hứng trước điều mới lạ và không ngại thử thách.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Đặc điểm:</span>
+              <span class="char-info-desc">Cô bé thế hệ hiện đại, ban đầu chưa biết nhiều về trò chơi dân gian. Sau khi gặp Chíp, Mai trở thành người bạn đồng hành xuyên không về quá khứ.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Sứ mệnh:</span>
+              <span class="char-info-desc">Cùng Chíp khám phá, ghi lại và mang những nét đẹp trò chơi dân gian trở về hiện tại để chúng không bao giờ bị lãng quên.</span>
+            </div>
+          </div>
+
           <div class="char-card__traits">
             <span class="char-trait">Vui vẻ</span>
             <span class="char-trait">Năng động</span>
+            <span class="char-trait">Thân thiện</span>
             <span class="char-trait">Tò mò</span>
             <span class="char-trait">Can đảm</span>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Nhân vật 2: Chíp -->
-      <div class="char-card char-card--chip reveal delay-2">
+      <!-- Nhân vật 2: Bé Chíp -->
+      <article class="char-card char-card--chip reveal delay-2">
         <div class="char-card__visual">
-          <img data-asset="chip" src="./src/assets/images/characters/chip.png" alt="Linh vật Chíp">
+          <img data-asset="chip" src="./src/assets/images/characters/chip.png" alt="Linh vật Bé Chíp - Boardgame CỘI" loading="lazy">
+          <span class="char-card__piece-tag char-card__piece-tag--orange">
+            Quân Quan Hổ Phách
+          </span>
         </div>
         <div class="char-card__body">
-          <div>
-            <span class="char-card__role">Linh vật · Sứ giả Cội Nguồn</span>
+          <div class="char-card__header">
+            <span class="char-card__role">Linh vật thương hiệu · Sứ giả Cội Nguồn</span>
             <h3 class="char-card__name">Bé Chíp</h3>
           </div>
-          <p class="char-card__quote">
-            "Nhiệm vụ của Chíp là không để bất kỳ trò chơi tuổi thơ nào bị lãng quên!"
-          </p>
-          <p style="font-size: var(--text-sm); line-height: 1.6;">
-            Chú gà nhỏ tinh nghịch với chiếc mào đáng yêu, tính tình năng nổ, đôi lúc hơi vụng về nhưng cực kỳ nhiệt tình dẫn dắt bạn bè vượt qua từng ván cờ Ô Ăn Quan.
-          </p>
+
+          <blockquote class="char-card__quote">
+            “Nhiệm vụ của Chíp là không để bất kỳ trò chơi tuổi thơ nào bị lãng quên!”
+          </blockquote>
+
+          <div class="char-info-list">
+            <div class="char-info-row">
+              <span class="char-info-label">Vai trò:</span>
+              <span class="char-info-desc">Linh vật đồng hành cùng Trúc Mai — sứ giả thuộc Hệ Thống Cội Nguồn được giao nhiệm vụ tìm lại các trò chơi truyền thống.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Tính cách:</span>
+              <span class="char-info-desc">Đáng yêu, hoạt bát, tò mò, đôi lúc hơi vụng về nhưng cực kỳ nhiệt tình và luôn có trách nhiệm cao với nhiệm vụ.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Đặc điểm:</span>
+              <span class="char-info-desc">Mang hình dáng chú gà nhỏ tinh nghịch. Sau khi chưa tìm được bạn đồng hành, Chíp được đưa đến thế giới loài người và tình cờ gặp Trúc Mai.</span>
+            </div>
+            <div class="char-info-row">
+              <span class="char-info-label">Sứ mệnh:</span>
+              <span class="char-info-desc">Dẫn dắt Trúc Mai du hành thời gian, tìm kiếm và lưu giữ những trò chơi dân gian đang mai một để hồi sinh trong đời sống hiện đại.</span>
+            </div>
+          </div>
+
           <div class="char-card__traits">
             <span class="char-trait">Đáng yêu</span>
             <span class="char-trait">Hoạt bát</span>
             <span class="char-trait">Nhiệt huyết</span>
             <span class="char-trait">Lém lỉnh</span>
+            <span class="char-trait">Trách nhiệm</span>
           </div>
         </div>
-      </div>
+      </article>
+    </div>
+
+    <!-- Callout Boardgame Pieces Note -->
+    <div class="characters__board-callout reveal delay-3">
+      <span class="callout-icon">✨</span>
+      <span>
+        <strong>Dấu ấn trên bàn cờ CỘI:</strong> Hình ảnh <strong>Trúc Mai</strong> và <strong>Bé Chíp</strong> được in khắc sắc nét trên <strong>4 quân Quan Acrylic</strong> (kích thước chuẩn 5×5×0.8cm) đi kèm trong mỗi bộ Boardgame CỘI!
+      </span>
     </div>
   </div>
 </section>
