@@ -115,26 +115,26 @@ function initGachaGame() {
   if (!unboxBtn || !resultBox || !resultText) return;
 
   const prizes = [
-    { name: 'Bộ Sticker Chíp & Trúc Mai độc quyền', icon: '✨' },
-    { name: 'Móc khóa Acrylic hình bé Chíp tung tăng', icon: '🐥' },
-    { name: 'Đế lót ly gốm họa tiết hoa mai CỘI', icon: '🌸' },
-    { name: 'Huy hiệu kim loại mạ vàng CỘI Limited', icon: '🎖️' },
-    { name: 'Standee mini Trúc Mai du hành thời gian', icon: '🎎' }
+    { name: 'Bộ Sticker Chíp & Trúc Mai độc quyền' },
+    { name: 'Móc khóa Acrylic hình Bé Chíp tung tăng' },
+    { name: 'Đế lót ly gốm họa tiết hoa mai CỘI' },
+    { name: 'Huy hiệu kim loại mạ vàng CỘI Limited' },
+    { name: 'Standee mini Trúc Mai du hành thời gian' }
   ];
 
   const rollGacha = () => {
     unboxBtn.disabled = true;
-    unboxBtn.innerHTML = 'Đang mở hộp bí ẩn... 🎁';
+    unboxBtn.innerHTML = 'Đang mở hộp bí ẩn...';
     if (chestImg) {
       chestImg.style.transform = 'scale(1.15) rotate(10deg)';
     }
 
     setTimeout(() => {
       const luckyPrize = prizes[Math.floor(Math.random() * prizes.length)];
-      resultText.innerHTML = `Chúc mừng bạn đã quay được: <strong>${luckyPrize.icon} ${luckyPrize.name}</strong> (Tặng kèm khi đặt hàng!)`;
+      resultText.innerHTML = `Chúc mừng bạn đã quay được: <strong>${luckyPrize.name}</strong> (Tặng kèm khi đặt hàng!)`;
       resultBox.classList.add('show');
       unboxBtn.disabled = false;
-      unboxBtn.innerHTML = 'Quay lại phần quà khác 🎲';
+      unboxBtn.innerHTML = 'Quay lại phần quà khác';
       if (chestImg) {
         chestImg.style.transform = 'scale(1) rotate(0deg)';
       }

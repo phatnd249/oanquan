@@ -23,12 +23,14 @@
 }
 
 .usp-card__icon {
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius-lg);
-  background: rgba(34, 167, 164, 0.12);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(34, 167, 164, 0.1);
   color: var(--color-primary);
-  font-size: 1.85rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +41,7 @@
 .usp-card:hover .usp-card__icon {
   background: var(--color-primary);
   color: #FFFFFF;
-  transform: rotate(6deg);
+  transform: translateY(-2px);
 }
 
 .usp-card__title {

@@ -47,10 +47,26 @@
   box-shadow: var(--shadow-md);
 }
 
-.pillar-card__icon {
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
-  display: inline-block;
+.pillar-card__number {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(34, 167, 164, 0.1);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.pillar-card:hover .pillar-card__number {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 .pillar-card__title {
