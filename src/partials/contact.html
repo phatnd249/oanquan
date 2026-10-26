@@ -1,0 +1,133 @@
+<!-- Băng hoa văn phân cách trước section -->
+<div class="flower-divider" aria-hidden="true"></div>
+
+<!-- ==================== 08. FORM TƯ VẤN ==================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <!-- Section header -->
+    <div class="contact__header reveal">
+      <div class="contact__badge">
+        <span>📩</span> Đăng Ký Tư Vấn
+      </div>
+      <h2 class="contact__title">
+        Để lại thông tin —<br>
+        <span>Đội tư vấn CỘI sẽ liên hệ bạn sớm nhất!</span>
+      </h2>
+      <p class="contact__desc">
+        Có câu hỏi về sản phẩm? Muốn đặt số lượng lớn làm quà tặng? Chỉ cần điền thông tin bên dưới, chúng mình sẽ liên hệ trong vòng 24 giờ.
+      </p>
+    </div>
+
+    <!-- Form card -->
+    <div class="contact__card reveal delay-1">
+      <!-- Trạng thái form -->
+      <div class="contact__form-wrap" id="contact-form-wrap">
+        <form class="contact__form" id="contact-form" novalidate>
+          <!-- Hidden: Nguồn trang -->
+          <input type="hidden" name="entry.925381880" value="Landing Page CỘI Boardgame">
+
+          <div class="contact__fields">
+            <!-- Họ và tên -->
+            <div class="contact__field">
+              <label class="contact__label" for="cf-name">
+                Họ và tên <span class="contact__required">*</span>
+              </label>
+              <input
+                type="text"
+                id="cf-name"
+                name="entry.118746383"
+                class="contact__input"
+                placeholder="Nguyễn Văn A"
+                autocomplete="name"
+                required
+              >
+              <span class="contact__error" id="cf-name-err">Vui lòng nhập họ và tên.</span>
+            </div>
+
+            <!-- Số điện thoại -->
+            <div class="contact__field">
+              <label class="contact__label" for="cf-phone">
+                Số điện thoại (Zalo) <span class="contact__required">*</span>
+              </label>
+              <input
+                type="tel"
+                id="cf-phone"
+                name="entry.1332627325"
+                class="contact__input"
+                placeholder="0901 234 567"
+                autocomplete="tel"
+                required
+              >
+              <span class="contact__error" id="cf-phone-err">Vui lòng nhập số điện thoại hợp lệ.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="contact__field">
+              <label class="contact__label" for="cf-email">
+                Địa chỉ Email <span class="contact__required">*</span>
+              </label>
+              <input
+                type="email"
+                id="cf-email"
+                name="entry.998852611"
+                class="contact__input"
+                placeholder="example@email.com"
+                autocomplete="email"
+                required
+              >
+              <span class="contact__error" id="cf-email-err">Vui lòng nhập địa chỉ email hợp lệ.</span>
+            </div>
+
+            <!-- Khu vực -->
+            <div class="contact__field">
+              <label class="contact__label" for="cf-region">
+                Khu vực sinh sống
+              </label>
+              <select
+                id="cf-region"
+                name="entry.722812867"
+                class="contact__input contact__select"
+                autocomplete="address-level1"
+              >
+                <option value="">— Chọn khu vực —</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Cần Thơ">Cần Thơ</option>
+                <option value="Hải Phòng">Hải Phòng</option>
+                <option value="Bình Dương">Bình Dương</option>
+                <option value="Đồng Nai">Đồng Nai</option>
+                <option value="Tỉnh / Thành phố khác">Tỉnh / Thành phố khác</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--accent contact__submit" id="contact-submit-btn">
+            <span class="contact__submit-text">Gửi Thông Tin Ngay</span>
+            <span class="contact__submit-icon" aria-hidden="true">→</span>
+          </button>
+
+          <p class="contact__privacy">
+            🔒 Thông tin của bạn được bảo mật tuyệt đối. Chúng mình không chia sẻ dữ liệu với bên thứ ba.
+          </p>
+        </form>
+      </div>
+
+      <!-- Màn hình thành công -->
+      <div class="contact__success" id="contact-success" aria-live="polite" hidden>
+        <div class="contact__success-icon" aria-hidden="true">🎉</div>
+        <h3 class="contact__success-title">Đã gửi thông tin thành công!</h3>
+        <p class="contact__success-msg">
+          Ban tư vấn sẽ liên hệ sớm nhất qua Zalo / Email bạn đã để lại.<br>
+          Cảm ơn bạn đã quan tâm đến Boardgame CỘI! 🎲
+        </p>
+        <button class="btn btn--outline contact__reset-btn" id="contact-reset-btn">
+          Gửi thêm thông tin khác
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- iframe ẩn dùng làm fallback -->
+  <iframe name="contact-hidden-frame" id="contact-hidden-frame" style="display:none;" aria-hidden="true" title="hidden submit frame"></iframe>
+</section>

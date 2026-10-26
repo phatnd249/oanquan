@@ -103,6 +103,8 @@
 
 .nav__drawer-cta {
   display: none;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 /* Header Actions (Nút Đặt Mua & Hamburger bên phải) */
@@ -120,6 +122,14 @@
   padding: 0.65rem 1.4rem;
   font-size: var(--text-sm);
   border-radius: var(--radius-full);
+}
+
+/* Nút Tư Vấn Ngay ở Header */
+.header__consult-btn {
+  padding: 0.65rem 1.4rem;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-full);
+  cursor: pointer;
 }
 
 .header__price-tag {
@@ -209,12 +219,16 @@
   }
 
   .nav__drawer-cta {
-    display: block;
+    display: flex;
     margin-top: 2rem;
     width: 100%;
   }
 
   .header__buy-btn {
+    display: none;
+  }
+
+  .header__consult-btn {
     display: none;
   }
 }

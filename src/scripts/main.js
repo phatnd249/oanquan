@@ -11,6 +11,7 @@ import '../styles/sections/index.css';
 // Modules
 import { initMenu } from './menu.js';
 import { images } from './images.js';
+import { initContactForms } from './contact.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductGallery();
   initGachaGame();
   initOrderForm();
+  initContactForms();
   applyAssets();
 });
 

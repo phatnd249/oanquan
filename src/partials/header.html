@@ -14,15 +14,31 @@
         <li><a href="#gacha" class="nav__link">Quà Gacha</a></li>
         <li><a href="#about" class="nav__link">Về CỘI</a></li>
         <li><a href="#faq" class="nav__link">FAQ</a></li>
+        <li><a href="#contact" class="nav__link">Tư Vấn</a></li>
       </ul>
       <!-- Nút trong mobile drawer -->
       <div class="nav__drawer-cta">
+        <button
+          class="btn btn--outline"
+          style="width: 100%;"
+          data-modal-open="contact-modal"
+        >Đăng Ký Tư Vấn</button>
         <a href="#gacha" class="btn btn--accent" style="width: 100%;">Đặt Mua Ngay</a>
       </div>
     </nav>
 
-    <!-- Header Actions (Bên phải): Nút Đặt Mua & Hamburger -->
+    <!-- Header Actions (Bên phải): Nút Tư Vấn, Đặt Mua & Hamburger -->
     <div class="header__action">
+      <!-- Nút mở Popup Modal Tư Vấn -->
+      <button
+        class="btn btn--outline header__consult-btn"
+        id="nav-cta-consult"
+        data-modal-open="contact-modal"
+        aria-label="Mở form đăng ký tư vấn"
+      >
+        <span>Tư Vấn Ngay</span>
+      </button>
+
       <a href="#gacha" class="btn btn--accent header__buy-btn" id="nav-cta-buy">
         <span>Đặt Mua Ngay</span>
       </a>

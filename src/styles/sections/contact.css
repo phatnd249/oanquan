@@ -1,0 +1,449 @@
+/* ==========================================================================
+   CONTACT / TƯ VẤN SECTION + POPUP MODAL
+   CỘI Boardgame Landing Page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECTION WRAPPER
+   -------------------------------------------------------------------------- */
+.contact {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(
+    160deg,
+    var(--color-bg) 0%,
+    rgba(34, 167, 164, 0.05) 50%,
+    var(--color-bg) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Trang trí nền */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(34, 167, 164, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(250, 162, 29, 0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION HEADER
+   -------------------------------------------------------------------------- */
+.contact__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.contact__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.2rem;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.contact__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+.contact__title span {
+  color: var(--color-primary);
+}
+
+.contact__desc {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. FORM CARD
+   -------------------------------------------------------------------------- */
+.contact__card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  max-width: 620px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. FORM FIELDS
+   -------------------------------------------------------------------------- */
+.contact__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 520px) {
+  .contact__fields {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  position: relative;
+}
+
+/* Email chiếm full width */
+.contact__field:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.contact__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.contact__required {
+  color: #e03131;
+  margin-left: 2px;
+}
+
+.contact__input {
+  padding: 0.85rem 1.2rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.contact__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint);
+  background: var(--color-surface);
+}
+
+.contact__input.is-error {
+  border-color: #e03131;
+  box-shadow: 0 0 0 3px rgba(224, 49, 49, 0.1);
+}
+
+.contact__select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23526360' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.contact__error {
+  font-size: var(--text-xs);
+  color: #e03131;
+  display: none;
+  margin-top: 2px;
+}
+
+.contact__field.has-error .contact__error {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   5. SUBMIT BUTTON
+   -------------------------------------------------------------------------- */
+.contact__submit {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: var(--text-base);
+  gap: var(--space-xs);
+  transition: all var(--transition-fast);
+}
+
+.contact__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.contact__submit-icon {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.contact__submit:not(:disabled):hover .contact__submit-icon {
+  transform: translateX(4px);
+}
+
+/* Spinner animation khi đang gửi */
+.contact__submit.is-loading .contact__submit-text::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.contact__privacy {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. SUCCESS SCREEN
+   -------------------------------------------------------------------------- */
+.contact__success {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  animation: popIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact__success[hidden] {
+  display: none;
+}
+
+.contact__success-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+  display: block;
+  animation: bounce-once 0.6s ease 0.3s both;
+}
+
+@keyframes bounce-once {
+  0%   { transform: scale(0.6); opacity: 0; }
+  60%  { transform: scale(1.2); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.contact__success-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-md);
+}
+
+.contact__success-msg {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.contact__reset-btn {
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   7. POPUP MODAL
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay.is-open .modal-dialog {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-dialog {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 64px rgba(20, 20, 20, 0.22);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.92) translateY(24px);
+  opacity: 0;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* Scrollbar mảnh cho modal */
+.modal-dialog::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-dialog::-webkit-scrollbar-thumb {
+  background: var(--color-primary-soft);
+  border-radius: 2px;
+}
+
+/* Nút đóng modal */
+.modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Header bên trong modal */
+.modal-header {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  color: var(--color-text-white);
+}
+
+.modal-header__badge {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: var(--space-xs);
+}
+
+.modal-header__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+}
+
+.modal-header__sub {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Nội dung form bên trong modal */
+.modal-body {
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+/* Modal dùng chung form contact nhưng trong modal-body */
+.modal-body .contact__fields {
+  margin-bottom: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .contact__card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .contact__title {
+    font-size: var(--text-2xl);
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    margin: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact__fields {
+    grid-template-columns: 1fr;
+  }
+  .contact__field:nth-child(3) {
+    grid-column: 1;
+  }
+}
