@@ -3,7 +3,10 @@
     <div class="section-header reveal">
       <span class="section-subtitle">Ưu Đãi Độc Quyền Website</span>
       <h2 class="section-title">Mua Online – Nhận Quà Gacha Bất Ngờ!</h2>
-      <p>Mỗi đơn hàng đặt mua trực tiếp trên website CỘI sẽ được tặng kèm một hộp quà Gacha bí ẩn ngẫu nhiên. Số lượng có hạn!</p>
+      <p>
+        Mỗi đơn hàng đặt mua trực tiếp trên website CỘI sẽ được tặng kèm một hộp quà Gacha bí ẩn ngẫu nhiên. Số lượng có hạn!
+        Bạn có thể đặt mua trực tiếp qua <a href="https://forms.gle/fdKizgeS71Jut31LA" target="_blank" rel="noopener noreferrer" class="link-inline-gf">Google Form tại đây ↗</a> hoặc điền form nhanh bên dưới.
+      </p>
     </div>
 
     <div class="gacha__grid">
@@ -53,28 +56,73 @@
           </p>
         </div>
 
+        <!-- Nút đặt mua trực tiếp qua Google Form -->
+        <a
+          href="https://forms.gle/fdKizgeS71Jut31LA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="order-google-btn"
+          id="btn-open-google-form"
+        >
+          <div class="order-google-btn__main">
+            <svg class="order-google-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>Đặt Mua Qua Google Form</span>
+          </div>
+          <span class="order-google-btn__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <div class="order-divider">
+          <span>hoặc điền form đặt mua nhanh</span>
+        </div>
+
         <form class="order-form" id="order-form">
           <div class="order-input-group">
             <label for="buyer-name">Họ và tên người nhận</label>
-            <input type="text" id="buyer-name" class="order-input" placeholder="Ví dụ: Nguyễn Văn A" required>
+            <input
+              type="text"
+              id="buyer-name"
+              name="entry.467701099"
+              class="order-input"
+              placeholder="Ví dụ: Nguyễn Văn A"
+              required
+            >
           </div>
 
           <div class="order-input-group">
             <label for="buyer-phone">Số điện thoại nhận hàng</label>
-            <input type="tel" id="buyer-phone" class="order-input" placeholder="090 123 4567" required>
+            <input
+              type="tel"
+              id="buyer-phone"
+              name="entry.2045257518"
+              class="order-input"
+              placeholder="090 123 4567"
+              required
+            >
           </div>
 
           <div class="order-input-group">
             <label for="buyer-address">Địa chỉ giao hàng chi tiết</label>
-            <input type="text" id="buyer-address" class="order-input" placeholder="Số nhà, đường, phường/xã, quận/huyện..." required>
+            <input
+              type="text"
+              id="buyer-address"
+              name="entry.794715591"
+              class="order-input"
+              placeholder="Số nhà, đường, phường/xã, quận/huyện..."
+              required
+            >
           </div>
 
           <div class="order-input-group">
             <label for="order-quantity">Số lượng bộ cờ</label>
-            <select id="order-quantity" class="order-input">
-              <option value="1">1 Bộ (+ 1 Quà Gacha ngẫu nhiên)</option>
-              <option value="2">2 Bộ (+ 2 Quà Gacha ngẫu nhiên - Miễn phí ship)</option>
-              <option value="3">3 Bộ (+ Full set 3 Quà Gacha - Miễn phí ship)</option>
+            <select id="order-quantity" name="entry.199952353" class="order-input">
+              <option value="1 Bộ (+ 1 Quà Gacha ngẫu nhiên)">1 Bộ (+ 1 Quà Gacha ngẫu nhiên)</option>
+              <option value="2 Bộ (+ 2 Quà Gacha ngẫu nhiên - Miễn phí ship)">2 Bộ (+ 2 Quà Gacha ngẫu nhiên - Miễn phí ship)</option>
+              <option value="3 Bộ (+ Full set 3 Quà Gacha - Miễn phí ship)">3 Bộ (+ Full set 3 Quà Gacha - Miễn phí ship)</option>
             </select>
           </div>
 
@@ -82,6 +130,25 @@
             Xác Nhận Đặt Mua & Nhận Quà Gacha
           </button>
         </form>
+
+        <!-- Thông báo sau khi submit thành công -->
+        <div class="order-success-msg" id="order-success-box" hidden>
+          <h4>🎉 Đặt Hàng Thành Công!</h4>
+          <p>Thông tin của bạn đã được lưu vào hệ thống CỘI. Chúng mình sẽ liên hệ xác nhận đơn trong 24 giờ.</p>
+        </div>
+
+        <!-- Hộp hiển thị link Google Form -->
+        <div class="order-form-help">
+          <span>Đường dẫn biểu mẫu Google Form:</span>
+          <a
+            href="https://forms.gle/fdKizgeS71Jut31LA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="order-form-help__link"
+          >
+            https://forms.gle/fdKizgeS71Jut31LA ↗
+          </a>
+        </div>
 
         <ul class="order-commitments">
           <li><strong>Miễn phí giao hàng</strong> toàn quốc khi đặt mua trực tuyến</li>
@@ -91,6 +158,8 @@
       </div>
     </div>
   </div>
+
+  <iframe name="order-hidden-frame" id="order-hidden-frame" style="display:none;" aria-hidden="true" title="hidden order submit frame"></iframe>
 </section>
 
 <!-- Băng hoa văn phân cách -->

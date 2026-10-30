@@ -150,24 +150,71 @@ function initGachaGame() {
 }
 
 /**
- * Xử lý Form đặt hàng & Newsletter
+ * Xử lý Form đặt hàng kết nối Google Form
  */
 function initOrderForm() {
   const orderForm = document.getElementById('order-form');
-  if (orderForm) {
-    orderForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = orderForm.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
+  const successBox = document.getElementById('order-success-box');
+  if (!orderForm) return;
+
+  const GOOGLE_ORDER_FORM_ACTION =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfHIlmUFAwLAUbIe2wjuf0wJoyydKnld95hwwWFrNaF_Kc1Bw/formResponse';
+
+  orderForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('btn-submit-order');
+    const originalText = btn ? btn.innerHTML : 'Xác Nhận Đặt Mua & Nhận Quà Gacha';
+
+    if (btn) {
       btn.disabled = true;
       btn.innerHTML = 'Đang gửi thông tin...';
+    }
 
-      setTimeout(() => {
-        alert('Cảm ơn bạn! Đơn hàng Boardgame CỘI của bạn đã được ghi nhận. Nhân viên sẽ liên hệ xác nhận trong 24h.');
-        orderForm.reset();
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-      }, 1000);
-    });
-  }
+    const formData = new FormData(orderForm);
+
+    try {
+      await fetch(GOOGLE_ORDER_FORM_ACTION, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+      });
+    } catch {
+      // Fallback qua hidden iframe nếu fetch thất bại
+      const frame = document.getElementById('order-hidden-frame');
+      if (frame) {
+        const tempForm = document.createElement('form');
+        tempForm.method = 'POST';
+        tempForm.action = GOOGLE_ORDER_FORM_ACTION;
+        tempForm.target = frame.name || 'order-hidden-frame';
+        tempForm.style.display = 'none';
+
+        for (const [key, val] of formData.entries()) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = val;
+          tempForm.appendChild(input);
+        }
+
+        document.body.appendChild(tempForm);
+        tempForm.submit();
+        setTimeout(() => {
+          if (tempForm.parentNode) {
+            document.body.removeChild(tempForm);
+          }
+        }, 1000);
+      }
+    }
+
+    orderForm.reset();
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    }
+
+    if (successBox) {
+      successBox.hidden = false;
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
 }

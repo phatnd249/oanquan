@@ -143,6 +143,127 @@
   font-weight: 800;
 }
 
+/* Nút mở Google Form trực tiếp */
+.order-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(34, 167, 164, 0.25);
+  margin-bottom: 1rem;
+}
+
+.order-google-btn:hover {
+  background: linear-gradient(135deg, var(--color-primary-deep) 0%, #163632 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 167, 164, 0.35);
+  color: #FFFFFF;
+}
+
+.order-google-btn__main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.order-google-btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.order-google-btn__arrow {
+  font-size: var(--text-base);
+  font-weight: 800;
+}
+
+.order-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.order-divider::before,
+.order-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.order-divider span {
+  padding: 0 0.75rem;
+}
+
+/* Hộp đường dẫn Google Form */
+.order-form-help {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.order-form-help__link {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: color 0.2s;
+}
+
+.order-form-help__link:hover {
+  color: var(--color-accent-hover);
+}
+
+.link-inline-gf {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.link-inline-gf:hover {
+  color: var(--color-accent-hover);
+}
+
+.order-success-msg {
+  padding: 1.25rem;
+  background: rgba(34, 167, 164, 0.1);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.order-success-msg h4 {
+  color: var(--color-primary-dark);
+  margin: 0 0 0.35rem;
+  font-size: var(--text-base);
+}
+
+.order-success-msg p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 @media (max-width: 860px) {
   .gacha__grid {
     grid-template-columns: 1fr;

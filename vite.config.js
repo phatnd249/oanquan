@@ -35,8 +35,11 @@ function htmlPartialsPlugin() {
 
   return {
     name: 'vite-plugin-html-partials',
-    transformIndexHtml(html) {
-      return replacePartials(html);
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        return replacePartials(html);
+      }
     },
     handleHotUpdate({ file, server }) {
       if (file.includes('partials') && file.endsWith('.html')) {
